@@ -119,14 +119,14 @@ app.post("/users/register", async (req, res) => {
   );
 });
 
-// app.post(
-//   "/users/login",
-//   passport.authenticate("local", {
-//     successRedirect: "/users/dashboard",
-//     failureRedirect: "/users/login",
-//     failureFlash: true,
-//   })
-// );
+app.post(
+  "/users/login",
+  passport.authenticate("local", {
+    successRedirect: "/users/dashboard",
+    failureRedirect: "/users/login",
+    failureFlash: true,
+  })
+);
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
